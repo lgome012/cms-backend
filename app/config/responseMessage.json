@@ -1,0 +1,103 @@
+{
+    "APP_MESSAGES": {
+        "SUCCESS": {
+            "errorCode": "success",
+            "message": "Success"
+        },
+        "ERROR_VALIDATION": {
+            "errorCode": "requestParamsNotComplete",
+            "message": "Validation Error",
+            "statusCode": 400
+        },
+        "ERROR_AUTHENTICATION": {
+            "errorCode": "authenticationError",
+            "message": "Authentication Failed",
+            "statusCode": 401
+        },
+        "ERROR_AUTHORIZATION": {
+            "errorCode": "authorizationError",
+            "message": "You are not authorized to perform this action",
+            "statusCode": 401
+        },
+        "ERROR_SERVER_ERROR": {
+            "errorCode": "serverError",
+            "message": "Server Error",
+            "statusCode": 500
+        },
+        "ERROR_DATA_NOT_FOUND": {
+            "errorCode": "dataNotFound",
+            "message": "No data found",
+            "statusCode": 404
+        },
+        "ERROR_CONNECTION_TIMEOUT": {
+            "errorCode" : "connectionTimeout",
+            "message"   : "Not able to connect to client",
+            "statusCode": 500
+        },
+        "ERROR_ALREADY_EXISTS" : {
+            "errorCode" : "alreadyExists",
+            "message"   : "User already exists",
+            "statusCode": 400
+        },        
+        "ERROR_INVALID_SESSION" : {
+            "errorCode" : "invalidOrExpiredSession",
+            "message"   : "Session is either invalid or expired",
+            "statusCode": 401
+        },
+        "ERROR_CACHE_CONNECTION" : {
+            "errorCode" : "cacheConnectionError",
+            "message"   : "Cache not responding",
+            "statusCode": 500
+        },
+        "ERROR_INVALID_AUTHORIZATIONTOKEN": {
+            "errorCode"     : "invalidAuthorizationToken",
+            "message"       : "Invalid Access Token",
+            "statusCode"    : 401
+        },
+        "ERROR_INVALID_USER" : {
+            "errorCode" : "invalidUser",
+            "message"   : "user is not valid",
+            "statusCode": 400
+        },
+        "ERROR_PASSWORD_MISMATCH" : {
+            "errorCode" : "passwordMismatch",
+            "message"   : "password does not match",
+            "statusCode": 401
+        },
+        "PASSWORD_ALREADY_EXIST" : {
+            "errorCode" : "passwordAlreadyExist",
+            "message"   : "password already exist",
+            "statusCode": 401
+        },
+        "OLD_PASSWORD_NOT_EXIST"   : {
+            "errorCode"     : "oldPasswordNotExist",
+            "message"       : "Old Password Not Exist Please use correst last password",
+            "statusCode"    : 401
+        },
+        "ERROR_UNSUPPORTED_SERVICE": {
+            "errorCode": "unsupportedService",
+            "message": "Service not supported",
+            "statusCode": 404
+        },
+        "ERROR_USER_COLLECTION_ALREADY_EXIST" : {
+            "errorCode" : "userCollectionAlreadyExist",
+            "message"   : "collection with name <%= collectionName %> already exists for this user",
+            "statusCode": 404
+        },
+        "ERROR_COLLECTION_NOT_FOUND" : {
+            "errorCode": "collectionNotFound",
+            "message": "No collection found",
+            "statusCode": 404
+        },
+        "ERROR_RECOMMENDATION_ALREADY_EXIST" : {
+            "errorCode" : "recommendationAlreadyExist",
+            "message"   : "collection with name <%= recommendations %> already exists",
+            "statusCode": 404
+        },
+        "ERROR_COLLECTION_RECOMMENDATION_NOT_FOUND" : {
+            "errorCode": "collectionRecommendationNotFound",
+            "message": "No collection Recommendation found",
+            "statusCode": 404
+        }
+    }
+}

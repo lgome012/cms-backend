@@ -128,3 +128,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+npm-debug.log
+node_modules
+package-lock.json
+ecosystem.config.js
+newrelic_agent.log

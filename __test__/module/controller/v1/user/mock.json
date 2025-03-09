@@ -1,0 +1,222 @@
+{
+    "user.validation.sign-up": {
+        "body": {
+            "fname": "Lokesh2",
+            "email": "lokesh@example.com",
+            "mobileNo": "9571963688",
+            "password": "Paisa@123",
+            "confirmPassword": "Paisa@123"
+        },
+        "tests": {
+            "VALIDATION_FNAME_EMPTY": {
+                "label": "Return ValidationError if fname is empty",
+                "body": {
+                    "fname": "",
+                    "email": "lokesh@example.com",
+                    "mobileNo": "9571963688",
+                    "password": "Paisa@123",
+                    "confirmPassword": "Paisa@123"
+                }
+            },
+            "VALIDATION_EMAIL_INVALID": {
+                "label": "Return ValidationError if email is not valid",
+                "body": {
+                    "fname": "Lokesh2",
+                    "email": "invalid-email",
+                    "mobileNo": "9571963688",
+                    "password": "Paisa@123",
+                    "confirmPassword": "Paisa@123"
+                }
+            },
+            "VALIDATION_PASSWORD_MISMATCH": {
+                "label": "Return ValidationError if password and confirmPassword do not match",
+                "body": {
+                    "fname": "Lokesh2",
+                    "email": "lokesh@example.com",
+                    "mobileNo": "9571963688",
+                    "password": "Paisa@123",
+                    "confirmPassword": "Different@123"
+                }
+            },
+            "VALIDATION_SUCCESS": {
+                "label": "Return success if all validations pass",
+                "body": {
+                    "fname": "Lokesh2",
+                    "email": "lokesh@example.com",
+                    "mobileNo": "9571963688",
+                    "password": "Paisa@123",
+                    "confirmPassword": "Paisa@123"
+                }
+            }
+        }
+    },
+    "user.validation.login": {
+        "tests": {
+            "VALIDATING_LOGIN_SUCCESS": {
+                "label": "Login Success",
+                "body": {
+                    "fname": "Lokesh2",
+                    "password": "Paisa@123"
+                }
+            },
+            "VALIDATING_LOGIN_FAILED": {
+                "label": "Return ValidationError if password is incorrect",
+                "body": {
+                    "fname": "Lokesh2",
+                    "password": "WrongPass@123"
+                }
+            },
+            "VALIDATION_PASSWORD_EMPTY": {
+                "label": "Return ValidationError if password is empty",
+                "body": {
+                    "fname": "Lokesh2",
+                    "password": ""
+                }
+            }
+        }
+    },
+    "user.validation.forgot-password": {
+        "tests": {
+            "VALIDATION_CONFIRM_PASSWORD_MISMATCH": {
+                "label": "Return ValidationError if password and confirmPassword do not match",
+                "body": {
+                    "fname": "Lokesh2",
+                    "password": "NewPaisa@123",
+                    "confirmPassword": "DifferentPaisa@123"
+                }
+            },
+            "VALIDATING_FORGOT_PASSWORD_SUCCESS": {
+                "label": "Return success for forgot password request",
+                "body": {
+                    "fname": "Lokesh2",
+                    "password": "NewPaisa@123",
+                    "confirmPassword": "NewPaisa@123"
+                }
+            },
+            "VALIDATING_FORGOT_PASSWORD_FAILED": {
+                "label": "Return ValidationError if user does not exist",
+                "body": {
+                    "fname": "UnknownUser",
+                    "password": "NewPaisa@123",
+                    "confirmPassword": "NewPaisa@123"
+                }
+            }
+        }
+    },
+    "user.validation.reset-password": {
+        "tests": {
+            "VALIDATION_OLD_PASSWORD_EMPTY": {
+                "label": "Return ValidationError if oldPassword is empty",
+                "body": {
+                    "fname": "Lokesh2",
+                    "oldPassword": "",
+                    "newPassword": "NewPaisa@123"
+                }
+            },
+            "VALIDATION_NEW_PASSWORD_EMPTY": {
+                "label": "Return ValidationError if newPassword is empty",
+                "body": {
+                    "fname": "Lokesh2",
+                    "oldPassword": "Paisa@123",
+                    "newPassword": ""
+                }
+            },
+            "VALIDATION_NEW_PASSWORD_SAME_AS_OLD": {
+                "label": "Return ValidationError if newPassword is same as oldPassword",
+                "body": {
+                    "fname": "Lokesh2",
+                    "oldPassword": "Paisa@123",
+                    "newPassword": "Paisa@123"
+                }
+            },
+            "VALIDATING_RESET_PASSWORD_SUCCESS": {
+                "label": "Return success for password reset",
+                "body": {
+                    "fname": "Lokesh2",
+                    "oldPassword": "Paisa@123",
+                    "newPassword": "NewPaisa@123"
+                }
+            },
+            "VALIDATING_RESET_PASSWORD_FAILED": {
+                "label": "Return ValidationError if old password is incorrect",
+                "body": {
+                    "fname": "Lokesh2",
+                    "oldPassword": "WrongPass@123",
+                    "newPassword": "NewPaisa@123"
+                }
+            }
+        }
+    },
+    "user.controller.signUp": {
+        "tests": {
+            "SIGNUP_SUCCESS": {
+                "label": "Return success for signup",
+                "body": {
+                    "fname": "Lokesh2",
+                    "password": "Paisa@123"
+                }
+            },
+            "SIGNUP_FAILED": {
+                "label": "Return ValidationError if signup fails",
+                "body": {
+                    "fname": "",
+                    "password": "Paisa@123"
+                }
+            }
+        }
+    },
+    "user.controller.login": {
+        "tests": {
+            "LOGIN_SUCCESS": {
+                "label": "Return success for login",
+                "body": {
+                    "fname": "Lokesh2",
+                    "password": "Paisa@123"
+                }
+            },
+            "LOGIN_FAILED": {
+                "label": "Return ValidationError if login fails",
+                "body": {
+                    "fname": "Lokesh2",
+                    "password": "WrongPass@123"
+                }
+            }
+        }
+    },
+    "user.controller.forgotPassword": {
+        "tests": {
+            "FORGOT_PASSWORD_SUCCESS": {
+                "label": "Return success for forgot password request",
+                "body": {
+                    "fname": "Lokesh2"
+                }
+            },
+            "FORGOT_PASSWORD_FAILED": {
+                "label": "Return ValidationError if forgot password request fails",
+                "body": {
+                    "fname": ""
+                }
+            }
+        }
+    },
+    "user.controller.resetPassword": {
+        "tests": {
+            "RESET_PASSWORD_SUCCESS": {
+                "label": "Return success for password reset",
+                "body": {
+                    "fname": "Lokesh2",
+                    "oldPassword": "Paisa@123",
+                    "newPassword": "NewPaisa@123"
+                }
+            },
+            "RESET_PASSWORD_FAILED": {
+                "label": "Return ValidationError if old password is incorrect",
+                "body": {
+                    "fname": "Lokesh2",
+                    "oldPassword": "WrongPass@123",
+                    "newPassword": "NewPaisa@123"
+                }
+            }
+        }
+    }
+}

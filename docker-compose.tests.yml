@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  cms-mongodb-test:
+    image: mongo:latest
+    container_name: cms-mongodb-test
+    ports:
+      - "27026:27017"
+    volumes:
+      - mongo_test_data:/data/db
+    restart: always
+    healthcheck:
+      test: mongosh --eval "db.adminCommand('ping')"
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - cms_network
+
+  cms-backend-test:
+    container_name: cms-backend-test
+    build:
+      context: .
+      dockerfile: Dockerfile.tests
+    ports:
+      - "3001:3000"
+    depends_on:
+      cms-mongodb-test:
+        condition: service_healthy
+    environment:
+      NODE_ENV: test
+      NODE_PORT: 3000
+      SECURITY_SWITCH: "true"
+      LOGGING_LABEL: "API"
+      LOGGING_CONSOLELEVEL: "debug"
+      LOGGING_FILELEVEL: "debug"
+      DATABASE_MONGO_MASTER_HOST: cms-mongodb-test
+      DATABASE_MONGO_MASTER_PORT: 27017
+      DATABASE_MONGO_MASTER_PULL_SIZE: 10
+      DATABASE_MONGO_MASTER_DATABASE: collection_management_test
+      DATA_SECRET_KEY: q4t7w!z%C*F-JaNd
+      JWT_ENCRYPTION_KEY: 9[t9Afd3DN3A8e=5
+      JWT_USER_AUTH_SECRET_KEY: 9[t9Afd3DN3A8e=5
+      JWT_USER_AUTH_TOKEN_LIFE_IN_MINUTE: 10
+    volumes:
+      - .:/var/app/
+    restart: always
+    command: ["npm", "run", "test"]
+    networks:
+      - cms_network
+
+networks:
+  cms_network:
+    driver: bridge
+
+volumes:
+  mongo_test_data:

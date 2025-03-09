@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  cms-backend:
+    container_name: cms-backend
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    environment:
+      - NODE_PORT=3000
+      - SECURITY_SWITCH=true
+      - LOGGING_LABEL=API
+      - LOGGING_CONSOLELEVEL=debug
+      - LOGGING_FILELEVEL=debug
+      - DATABASE_MONGO_MASTER_HOST=mongodb
+      - DATABASE_MONGO_MASTER_PORT=27017
+      - DATABASE_MONGO_MASTER_PULL_SIZE=10
+      - DATABASE_MONGO_MASTER_DATABASE=collection_management
+      - DATA_SECRET_KEY=q4t7w!z%C*F-JaNd
+      - JWT_ENCRYPTION_KEY=9[t9Afd3DN3A8e=5
+      - JWT_USER_AUTH_SECRET_KEY=9[t9Afd3DN3A8e=5
+      - JWT_USER_AUTH_TOKEN_LIFE_IN_MINUTE=10
+    volumes:
+      - .:/var/app/
+    restart: always
+
+  mongodb:
+    image: mongo:latest
+    container_name: cms-mongodb
+    ports:
+      - "27025:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: always
+
+volumes:
+  mongo_data:
