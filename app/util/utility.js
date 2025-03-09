@@ -21,7 +21,7 @@ utility.maskData = (object, keysToMask) => {
             let masked    = [];
             for (let key in objOrArr) {
                 let val           = objOrArr[key];
-                let dipaisabazaarsplayCount  = keysToMask[key];
+                let displayCount  = keysToMask[key];
 
                 if (underscore.isObject(val) || underscore.isArray(val)) {
                     let maskedValue = underscore.has(keysToMask, key) ? masked.push("******") : masked.push(mask(val));
