@@ -1,0 +1,119 @@
+{
+    "recommendation.validation.createRecommendation": {
+      "body": {
+        "collections": [
+          {
+            "title": "My Favorite Books",
+            "category": "Books",
+            "recommendations": [
+              {
+                "title": "The Great Gatsby",
+                "meta": {
+                  "author": "F. Scott Fitzgerald",
+                  "year": 1925
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "tests": {
+        "VALIDATION_TITLE_EMPTY": {
+          "label": "Return ValidationError if title is empty",
+          "body": {
+            "collections": [
+              {
+                "title": "",
+                "category": "Books",
+                "recommendations": [
+                  {
+                    "title": "The Great Gatsby",
+                    "meta": {
+                      "author": "F. Scott Fitzgerald",
+                      "year": 1925
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "VALIDATION_CATEGORY_INVALID": {
+          "label": "Return ValidationError if category is invalid",
+          "body": {
+            "collections": [
+              {
+                "title": "My Favorite Books",
+                "category": "InvalidCategory",
+                "recommendations": [
+                  {
+                    "title": "The Great Gatsby",
+                    "meta": {
+                      "author": "F. Scott Fitzgerald",
+                      "year": 1925
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "VALIDATION_SUCCESS": {
+          "label": "Return success if all validations pass",
+          "body": {
+            "collections": [
+              {
+                "title": "My Favorite Books",
+                "category": "Books",
+                "recommendations": [
+                  {
+                    "title": "The Great Gatsby",
+                    "meta": {
+                      "author": "F. Scott Fitzgerald",
+                      "year": 1925
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "recommendation.validation.getAllCollectionRecommendation": {
+      "tests": {
+        "VALIDATION_AUTHORIZATION_EMPTY": {
+          "label": "Return ValidationError if authorization header is empty",
+          "headers": {
+            "authorization": ""
+          }
+        },
+        "VALIDATION_SUCCESS": {
+          "label": "Return success if all validations pass",
+          "headers": {
+            "authorization": "Bearer some-valid-token"
+          },
+          "query": {
+            "category": "Books"
+          }
+        }
+      }
+    },
+    "recommendation.validation.deleteRecommendationFromCollection": {
+      "tests": {
+        "VALIDATION_RECOMMENDATIONID_INVALID": {
+          "label": "Return ValidationError if recommendationId is invalid",
+          "params": {
+            "recommendationId": "invalid-id"
+          }
+        },
+        "VALIDATION_SUCCESS": {
+          "label": "Return success if all validations pass",
+          "params": {
+            "recommendationId": "123e4567-e89b-12d3-a456-426614174000"
+          }
+        }
+      }
+    }
+  }
+  

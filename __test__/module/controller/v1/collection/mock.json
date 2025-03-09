@@ -1,0 +1,107 @@
+{
+    "collection.validation.create": {
+        "body": {
+            "name": "My Collection"
+        },
+        "tests": {
+            "VALIDATION_NAME_EMPTY": {
+                "label": "Return ValidationError if name is empty",
+                "body": {
+                    "name": ""
+                }
+            },
+            "VALIDATION_SUCCESS": {
+                "label": "Return success if all validations pass",
+                "body": {
+                    "name": "My Collection"
+                }
+            }
+        }
+    },
+    "collection.validation.getAllUserCollection": {
+        "tests": {
+            "VALIDATION_USERID_INVALID": {
+                "label": "Return ValidationError if userId is invalid",
+                "params": {
+                    "userId": "invalid-id"
+                }
+            },
+            "VALIDATION_SUCCESS": {
+                "label": "Return success if all validations pass",
+                "params": {
+                    "userId": "550e8400-e29b-41d4-a716-446655440000"
+                }
+            }
+        }
+    },
+    "collection.validation.get": {
+        "tests": {
+            "VALIDATION_COLLECTIONID_INVALID": {
+                "label": "Return ValidationError if collectionId is invalid",
+                "params": {
+                    "collectionId": "invalid-id"
+                }
+            },
+            "VALIDATION_SUCCESS": {
+                "label": "Return success if all validations pass",
+                "params": {
+                    "collectionId": "550e8400-e29b-41d4-a716-446655440000"
+                }
+            }
+        }
+    },
+    "collection.validation.update": {
+        "body": {
+            "name": "Updated Collection Name"
+        },
+        "tests": {
+            "VALIDATION_NAME_EMPTY": {
+                "label": "Return ValidationError if name is empty",
+                "body": {
+                    "name": ""
+                }
+            },
+            "VALIDATION_SUCCESS": {
+                "label": "Return success if all validations pass",
+                "body": {
+                    "name": "Updated Collection Name"
+                }
+            }
+        }
+    },
+    "collection.validation.delete": {
+        "tests": {
+            "VALIDATION_COLLECTIONID_INVALID": {
+                "label": "Return ValidationError if collectionId is invalid",
+                "params": {
+                    "collectionId": "invalid-id"
+                }
+            },
+            "VALIDATION_SUCCESS": {
+                "label": "Return success if all validations pass",
+                "params": {
+                    "collectionId": "550e8400-e29b-41d4-a716-446655440000"
+                }
+            }
+        }
+    },
+    "collection.validation.addRecommendation": {
+        "body": {
+            "recommendationIds": ["123e4567-e89b-12d3-a456-426614174000"]
+        },
+        "tests": {
+            "VALIDATION_RECOMMENDATION_EMPTY": {
+                "label": "Return ValidationError if recommendationIds is empty",
+                "body": {
+                    "recommendationIds": []
+                }
+            },
+            "VALIDATION_SUCCESS": {
+                "label": "Return success if all validations pass",
+                "body": {
+                    "recommendationIds": ["123e4567-e89b-12d3-a456-426614174000"]
+                }
+            }
+        }
+    }
+}

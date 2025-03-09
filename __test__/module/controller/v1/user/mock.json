@@ -4,8 +4,8 @@
             "fname": "Lokesh2",
             "email": "lokesh@example.com",
             "mobileNo": "9571963688",
-            "password": "Paisa@123",
-            "confirmPassword": "Paisa@123"
+            "password": "Lokesh@123",
+            "confirmPassword": "Lokesh@123"
         },
         "tests": {
             "VALIDATION_FNAME_EMPTY": {
@@ -14,8 +14,8 @@
                     "fname": "",
                     "email": "lokesh@example.com",
                     "mobileNo": "9571963688",
-                    "password": "Paisa@123",
-                    "confirmPassword": "Paisa@123"
+                    "password": "Lokesh@123",
+                    "confirmPassword": "Lokesh@123"
                 }
             },
             "VALIDATION_EMAIL_INVALID": {
@@ -24,8 +24,8 @@
                     "fname": "Lokesh2",
                     "email": "invalid-email",
                     "mobileNo": "9571963688",
-                    "password": "Paisa@123",
-                    "confirmPassword": "Paisa@123"
+                    "password": "Lokesh@123",
+                    "confirmPassword": "Lokesh@123"
                 }
             },
             "VALIDATION_PASSWORD_MISMATCH": {
@@ -34,7 +34,7 @@
                     "fname": "Lokesh2",
                     "email": "lokesh@example.com",
                     "mobileNo": "9571963688",
-                    "password": "Paisa@123",
+                    "password": "Lokesh@123",
                     "confirmPassword": "Different@123"
                 }
             },
@@ -44,8 +44,8 @@
                     "fname": "Lokesh2",
                     "email": "lokesh@example.com",
                     "mobileNo": "9571963688",
-                    "password": "Paisa@123",
-                    "confirmPassword": "Paisa@123"
+                    "password": "Lokesh@123",
+                    "confirmPassword": "Lokesh@123"
                 }
             }
         }
@@ -56,7 +56,7 @@
                 "label": "Login Success",
                 "body": {
                     "fname": "Lokesh2",
-                    "password": "Paisa@123"
+                    "password": "Lokesh@123"
                 }
             },
             "VALIDATING_LOGIN_FAILED": {
@@ -81,24 +81,24 @@
                 "label": "Return ValidationError if password and confirmPassword do not match",
                 "body": {
                     "fname": "Lokesh2",
-                    "password": "NewPaisa@123",
-                    "confirmPassword": "DifferentPaisa@123"
+                    "password": "NewLokesh@123",
+                    "confirmPassword": "DifferentLokesh@123"
                 }
             },
             "VALIDATING_FORGOT_PASSWORD_SUCCESS": {
                 "label": "Return success for forgot password request",
                 "body": {
                     "fname": "Lokesh2",
-                    "password": "NewPaisa@123",
-                    "confirmPassword": "NewPaisa@123"
+                    "password": "NewLokesh@123",
+                    "confirmPassword": "NewLokesh@123"
                 }
             },
             "VALIDATING_FORGOT_PASSWORD_FAILED": {
                 "label": "Return ValidationError if user does not exist",
                 "body": {
                     "fname": "UnknownUser",
-                    "password": "NewPaisa@123",
-                    "confirmPassword": "NewPaisa@123"
+                    "password": "NewLokesh@123",
+                    "confirmPassword": "NewLokesh@123"
                 }
             }
         }
@@ -110,14 +110,14 @@
                 "body": {
                     "fname": "Lokesh2",
                     "oldPassword": "",
-                    "newPassword": "NewPaisa@123"
+                    "newPassword": "NewLokesh@123"
                 }
             },
             "VALIDATION_NEW_PASSWORD_EMPTY": {
                 "label": "Return ValidationError if newPassword is empty",
                 "body": {
                     "fname": "Lokesh2",
-                    "oldPassword": "Paisa@123",
+                    "oldPassword": "Lokesh@123",
                     "newPassword": ""
                 }
             },
@@ -125,16 +125,16 @@
                 "label": "Return ValidationError if newPassword is same as oldPassword",
                 "body": {
                     "fname": "Lokesh2",
-                    "oldPassword": "Paisa@123",
-                    "newPassword": "Paisa@123"
+                    "oldPassword": "Lokesh@123",
+                    "newPassword": "Lokesh@123"
                 }
             },
             "VALIDATING_RESET_PASSWORD_SUCCESS": {
                 "label": "Return success for password reset",
                 "body": {
                     "fname": "Lokesh2",
-                    "oldPassword": "Paisa@123",
-                    "newPassword": "NewPaisa@123"
+                    "oldPassword": "Lokesh@123",
+                    "newPassword": "NewLokesh@123"
                 }
             },
             "VALIDATING_RESET_PASSWORD_FAILED": {
@@ -142,7 +142,7 @@
                 "body": {
                     "fname": "Lokesh2",
                     "oldPassword": "WrongPass@123",
-                    "newPassword": "NewPaisa@123"
+                    "newPassword": "NewLokesh@123"
                 }
             }
         }
@@ -153,14 +153,14 @@
                 "label": "Return success for signup",
                 "body": {
                     "fname": "Lokesh2",
-                    "password": "Paisa@123"
+                    "password": "Lokesh@123"
                 }
             },
             "SIGNUP_FAILED": {
                 "label": "Return ValidationError if signup fails",
                 "body": {
                     "fname": "",
-                    "password": "Paisa@123"
+                    "password": "Lokesh@123"
                 }
             }
         }
@@ -171,7 +171,7 @@
                 "label": "Return success for login",
                 "body": {
                     "fname": "Lokesh2",
-                    "password": "Paisa@123"
+                    "password": "Lokesh@123"
                 }
             },
             "LOGIN_FAILED": {
@@ -205,8 +205,8 @@
                 "label": "Return success for password reset",
                 "body": {
                     "fname": "Lokesh2",
-                    "oldPassword": "Paisa@123",
-                    "newPassword": "NewPaisa@123"
+                    "oldPassword": "Lokesh@123",
+                    "newPassword": "NewLokesh@123"
                 }
             },
             "RESET_PASSWORD_FAILED": {
@@ -214,7 +214,7 @@
                 "body": {
                     "fname": "Lokesh2",
                     "oldPassword": "WrongPass@123",
-                    "newPassword": "NewPaisa@123"
+                    "newPassword": "NewLokesh@123"
                 }
             }
         }
