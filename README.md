@@ -9,7 +9,7 @@
 To start the server, simply run the following command:
 
 ```sh
-docker-compose up -d
+docker-compose up
 ```
 
 This will spin up all necessary services, including the application and database.
